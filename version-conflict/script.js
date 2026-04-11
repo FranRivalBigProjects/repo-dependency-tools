@@ -1,0 +1,1 @@
+const res=document.getElementById('res');function run(){let lines=deps.value.split('\n');let set=new Set(lines);res.innerText=set.size!==lines.length?'Conflict detected':'No conflicts';}

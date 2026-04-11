@@ -1,0 +1,1 @@
+const res=document.getElementById('res');function run(){let p=+packages.value,r=+rate.value;if(!p||!r){res.innerText='Enter values';return;}res.innerText=`Updated: ${(p*r/100).toFixed(0)}`;}

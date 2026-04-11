@@ -1,0 +1,1 @@
+const res=document.getElementById('res');function run(){let f=+files.value,a=+avg.value;if(!f||!a){res.innerText='Enter values';return;}res.innerText=`Size: ${(f*a).toFixed(2)} MB`;}

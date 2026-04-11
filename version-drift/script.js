@@ -1,0 +1,1 @@
+const res=document.getElementById('res');function run(){let c=+current.value,l=+latest.value;if(!c||!l){res.innerText='Enter values';return;}res.innerText=`Drift: ${l-c}`;}
