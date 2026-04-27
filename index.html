@@ -521,7 +521,293 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
     </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════
+     INSERT THIS ENTIRE BLOCK before the  <!-- LONG-TAIL TAGS -->
+
+```
+ section in your existing index.html
+ ═══════════════════════════════════════════════════════════ -->
+```
+
+<!-- CROSS-REPO CALL GRAPH / PROTOBUF GUIDE -->
+
+<section>
+    <div class="section-head">
+        <h2>Cross-Repo Call Graph &amp; Protobuf Dependency Tracking</h2>
+        <span class="section-rule"></span>
+    </div>
+
+```
+<!-- Extra CSS needed for this section — add inside your existing <style> block
+     OR keep it here as an inline <style> tag -->
+<style>
+.guide-intro {
+    font-size: .925rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 780px;
+    margin-bottom: 28px;
+}
+
+.guide-intro strong { color: var(--text); font-weight: 600; }
+
+.guide-intro code {
+    font-family: var(--font-mono);
+    font-size: .78em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-radius: 3px;
+    padding: 1px 6px;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    transition: border-color var(--transition);
+}
+
+.step:hover { border-color: rgba(34,197,94,.2); }
+
+.step-num {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    padding-top: 3px;
+    opacity: .7;
+}
+
+.step-body h3 {
+    font-size: .95rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.step-body p {
+    font-size: .865rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.step-body p code {
+    font-family: var(--font-mono);
+    font-size: .78em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-radius: 3px;
+    padding: 1px 6px;
+}
+
+.step-body p strong { color: var(--text); font-weight: 600; }
+
+.tool-compare {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.tool-compare-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    transition: border-color var(--transition);
+}
+
+.tool-compare-card:hover { border-color: rgba(34,197,94,.2); }
+
+.tcc-name {
+    font-family: var(--font-mono);
+    font-size: .75rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: .04em;
+    margin-bottom: 6px;
+}
+
+.tcc-desc {
+    font-size: .845rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.55;
+}
+
+.tcc-desc code {
+    font-family: var(--font-mono);
+    font-size: .78em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-radius: 3px;
+    padding: 1px 5px;
+}
+
+.tcc-desc strong { color: var(--text); font-weight: 500; }
+
+.proto-note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    font-size: .875rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.proto-note strong { color: var(--text); font-weight: 600; }
+.proto-note code {
+    font-family: var(--font-mono);
+    font-size: .78em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-radius: 3px;
+    padding: 1px 6px;
+}
+
+.approach-label {
+    font-family: var(--font-mono);
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    margin-top: 24px;
+    display: block;
+}
+</style>
+
+<p class="guide-intro">
+    Building a <strong>cross-repo call graph to track who depends on a deprecated Protobuf field</strong> is one of the harder dependency problems in distributed systems — it requires analyzing generated code across multiple repositories, not just <code>package.json</code> or <code>go.mod</code> files. Here is the most reliable approach, broken down by step.
+</p>
+
+<!-- STEP-BY-STEP APPROACH -->
+<div class="steps-list">
+
+    <div class="step">
+        <span class="step-num">01</span>
+        <div class="step-body">
+            <h3>Mark the field as deprecated in the .proto file first</h3>
+            <p>
+                Before building any graph, mark the field with the <code>deprecated = true</code> option in your <code>.proto</code> file. This is separate from the <code>reserved</code> keyword — <code>deprecated = true</code> keeps the field usable but signals intent, while <code>reserved</code> prevents future use of the field number. In proto3: <code>int32 old_field = 3 [deprecated = true];</code>. This gives generated SDKs a warning hook and makes the field <strong>findable by static analysis</strong> across generated code.
+            </p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-num">02</span>
+        <div class="step-body">
+            <h3>Use buf breaking to detect field usage across BSR consumers</h3>
+            <p>
+                If you publish your Protobuf schema to the <strong>Buf Schema Registry (BSR)</strong>, you can run <code>buf breaking</code> against all downstream consumers that have declared your module as a dependency in their <code>buf.yaml</code>. The BSR dependency graph gives you a list of every module that imports your <code>.proto</code> — this is the fastest way to enumerate affected repos without manual searching. Run <code>buf dep graph</code> on your module to see the direct consumer list.
+            </p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-num">03</span>
+        <div class="step-body">
+            <h3>Search generated code with ast-grep or semgrep across repos</h3>
+            <p>
+                Generated Protobuf code (Go structs, Python dataclasses, Java POJOs) has predictable field accessor patterns. Use <strong>ast-grep</strong> or <strong>semgrep</strong> with a pattern matching the deprecated field name: e.g. <code>ast-grep --pattern '$_\.OldField' --lang go</code> across a cloned copy of all consumer repos. This finds actual call sites — not just import declarations — so you know which services <em>read or write</em> the field, not just which ones import the proto package.
+            </p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-num">04</span>
+        <div class="step-body">
+            <h3>Build the call graph with Sourcegraph or grep.app at scale</h3>
+            <p>
+                For organizations with many repos, running local clones is impractical. <strong>Sourcegraph</strong> indexes all your repos and supports structural search — search for the generated field accessor pattern across your entire codebase with one query. <strong>grep.app</strong> does the same for public GitHub repos. The result is a cross-repo call graph showing every file and function that references the deprecated field, which you can export and feed into a dependency graph visualizer.
+            </p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-num">05</span>
+        <div class="step-body">
+            <h3>Map results into a dependency graph by repo and team owner</h3>
+            <p>
+                Once you have the list of call sites, group them by repository and cross-reference with your CODEOWNERS or team ownership file. The output is a <strong>dependency graph where each node is a repo</strong> and edges represent "this repo uses the deprecated field." Sort by frequency of use to prioritize migration. Repos with high usage need a migration path before you can mark the field as <code>reserved</code>. This graph is what the <a href="dep-graph/" style="color:var(--accent);">Dependency Graph Visualizer</a> above helps you visualize once you have the edge list.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOOL COMPARISON -->
+<span class="approach-label">Tools that solve this problem</span>
+<div class="tool-compare">
+
+    <div class="tool-compare-card">
+        <p class="tcc-name">buf CLI + BSR</p>
+        <p class="tcc-desc"><strong>Best for:</strong> teams already using the Buf Schema Registry. <code>buf dep graph</code> gives you the full dependency graph of your Protobuf module across all registered consumers. No code cloning required.</p>
+    </div>
+
+    <div class="tool-compare-card">
+        <p class="tcc-name">ast-grep / semgrep</p>
+        <p class="tcc-desc"><strong>Best for:</strong> finding actual field access sites in generated code across cloned repos. Supports Go, Java, Python, TypeScript. Outputs precise file:line locations for each call site.</p>
+    </div>
+
+    <div class="tool-compare-card">
+        <p class="tcc-name">Sourcegraph structural search</p>
+        <p class="tcc-desc"><strong>Best for:</strong> large engineering organizations. Indexes all repos and supports cross-language structural search without cloning. The <code>:[field]</code> pattern syntax finds accessor usage precisely.</p>
+    </div>
+
+    <div class="tool-compare-card">
+        <p class="tcc-name">GitHub code search (REST API)</p>
+        <p class="tcc-desc"><strong>Best for:</strong> public repos or GitHub Enterprise. Use <code>GET /search/code?q=OldField+language:go</code> to enumerate all repos using the generated field name across your org.</p>
+    </div>
+
+    <div class="tool-compare-card">
+        <p class="tcc-name">deps.dev + OpenSSF</p>
+        <p class="tcc-desc"><strong>Best for:</strong> package-level dependency graphs (not field-level). Maps which modules import which Protobuf package version. Useful for finding the consumer list before doing call-site analysis.</p>
+    </div>
+
+    <div class="tool-compare-card">
+        <p class="tcc-name">Neo4j + code ingestion</p>
+        <p class="tcc-desc"><strong>Best for:</strong> persistent, queryable dependency graphs. Ingest AST output into a graph database and query with Cypher: <code>MATCH (s)-[:CALLS]->(f:Field {name:'old_field'}) RETURN s</code>.</p>
+    </div>
+
+</div>
+
+<!-- PROTO-SPECIFIC NOTE -->
+<div class="proto-note">
+    <strong>Protobuf-specific note on deprecated vs reserved:</strong> <code>deprecated = true</code> is the right first step — it preserves backward compatibility while signaling intent. <code>reserved</code> should only be used after <em>all consumers have migrated</em>, because it makes the field number and name permanently unavailable for future use. The call graph you build in steps 1–5 above gives you the migration checklist before you can safely move from <code>deprecated</code> to <code>reserved</code>. If a field is in a widely-consumed shared schema, expect 2–6 months of migration time across dependent teams.
+</div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     END OF NEW SECTION — paste the above block immediately
+     before the existing <!-- LONG-TAIL TAGS --> comment
+
+
+ ═══════════════════════════════════════════════════════════ -->
+
 <!-- LONG-TAIL TAGS -->
+
+
 <section>
     <div class="section-head">
         <h2>Common Search Queries</h2>
