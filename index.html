@@ -159,6 +159,8 @@ section:nth-of-type(2) { animation-delay: .13s; }
 section:nth-of-type(3) { animation-delay: .19s; }
 section:nth-of-type(4) { animation-delay: .25s; }
 section:nth-of-type(5) { animation-delay: .31s; }
+section:nth-of-type(6) { animation-delay: .37s; }
+section:nth-of-type(7) { animation-delay: .43s; }
 section:last-of-type   { border-bottom: none; }
 
 .section-head {
@@ -376,6 +378,7 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
 <div class="wrapper">
 
 <!-- HEADER -->
+
 <header>
     <div class="header-label">Repo Dependency Toolkit</div>
     <h1>
@@ -393,6 +396,7 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
 </header>
 
 <!-- DEPENDENCY GRAPH & STRUCTURE -->
+
 <section>
     <div class="section-head">
         <h2>Dependency Graph &amp; Structure</h2>
@@ -400,24 +404,28 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
     </div>
     <div class="tools-grid">
 
-        <a class="tool" href="dep-graph/">
-            <span class="tool-path">dep-graph/</span>
-            <span class="tool-name">Dependency Graph Visualizer</span>
-            <span class="tool-desc">Visualize package dependency graphs and relationships across your project. Detect circular dependencies, deep dependency chains, and transitive dependencies.</span>
-            <span class="tool-cta">Open Dep Graph</span>
-        </a>
 
-        <a class="tool" href="monorepo/">
-            <span class="tool-path">monorepo/</span>
-            <span class="tool-name">Monorepo Analyzer</span>
-            <span class="tool-desc">Analyze monorepo structures and inter-package relationships. Understand which packages depend on which, identify shared dependencies, and surface coupling issues.</span>
-            <span class="tool-cta">Open Monorepo Analyzer</span>
-        </a>
+    <a class="tool" href="dep-graph/">
+        <span class="tool-path">dep-graph/</span>
+        <span class="tool-name">Dependency Graph Visualizer</span>
+        <span class="tool-desc">Visualize package dependency graphs and relationships across your project. Detect circular dependencies, deep dependency chains, and transitive dependencies.</span>
+        <span class="tool-cta">Open Dep Graph</span>
+    </a>
 
-    </div>
+    <a class="tool" href="monorepo/">
+        <span class="tool-path">monorepo/</span>
+        <span class="tool-name">Monorepo Analyzer</span>
+        <span class="tool-desc">Analyze monorepo structures and inter-package relationships. Understand which packages depend on which, identify shared dependencies, and surface coupling issues.</span>
+        <span class="tool-cta">Open Monorepo Analyzer</span>
+    </a>
+
+</div>
+
+
 </section>
 
 <!-- VERSION MANAGEMENT -->
+
 <section>
     <div class="section-head">
         <h2>Version Management &amp; Conflicts</h2>
@@ -425,24 +433,28 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
     </div>
     <div class="tools-grid">
 
-        <a class="tool" href="version-conflict/">
-            <span class="tool-path">version-conflict/</span>
-            <span class="tool-name">Version Conflict Checker</span>
-            <span class="tool-desc">Detect version conflicts between dependencies in your package.json or lock file. Find incompatible peer dependencies and duplicate packages at different versions.</span>
-            <span class="tool-cta">Open Conflict Checker</span>
-        </a>
 
-        <a class="tool" href="version-drift/">
-            <span class="tool-path">version-drift/</span>
-            <span class="tool-name">Version Drift Analyzer</span>
-            <span class="tool-desc">Analyze version drift across services, packages, and microservices in a monorepo. Identify packages pinned to outdated versions and standardize your dependency baseline.</span>
-            <span class="tool-cta">Open Drift Analyzer</span>
-        </a>
+    <a class="tool" href="version-conflict/">
+        <span class="tool-path">version-conflict/</span>
+        <span class="tool-name">Version Conflict Checker</span>
+        <span class="tool-desc">Detect version conflicts between dependencies in your package.json or lock file. Find incompatible peer dependencies and duplicate packages at different versions.</span>
+        <span class="tool-cta">Open Conflict Checker</span>
+    </a>
 
-    </div>
+    <a class="tool" href="version-drift/">
+        <span class="tool-path">version-drift/</span>
+        <span class="tool-name">Version Drift Analyzer</span>
+        <span class="tool-desc">Analyze version drift across services, packages, and microservices in a monorepo. Identify packages pinned to outdated versions and standardize your dependency baseline.</span>
+        <span class="tool-cta">Open Drift Analyzer</span>
+    </a>
+
+</div>
+
+
 </section>
 
 <!-- UPDATES & INSIGHTS -->
+
 <section>
     <div class="section-head">
         <h2>Updates &amp; Repository Insights</h2>
@@ -450,24 +462,28 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
     </div>
     <div class="tools-grid">
 
-        <a class="tool" href="update-sim/">
-            <span class="tool-path">update-sim/</span>
-            <span class="tool-name">Dependency Update Simulator</span>
-            <span class="tool-desc">Simulate dependency updates and evaluate potential breaking changes before running npm update or yarn upgrade. Assess risk by semver level (patch/minor/major).</span>
-            <span class="tool-cta">Open Update Simulator</span>
-        </a>
 
-        <a class="tool" href="repo-size/">
-            <span class="tool-path">repo-size/</span>
-            <span class="tool-name">Repo Size Analyzer</span>
-            <span class="tool-desc">Analyze repository and node_modules size by package. Identify bloated dependencies, calculate install footprint, and find packages with large bundle impact.</span>
-            <span class="tool-cta">Open Size Analyzer</span>
-        </a>
+    <a class="tool" href="update-sim/">
+        <span class="tool-path">update-sim/</span>
+        <span class="tool-name">Dependency Update Simulator</span>
+        <span class="tool-desc">Simulate dependency updates and evaluate potential breaking changes before running npm update or yarn upgrade. Assess risk by semver level (patch/minor/major).</span>
+        <span class="tool-cta">Open Update Simulator</span>
+    </a>
 
-    </div>
+    <a class="tool" href="repo-size/">
+        <span class="tool-path">repo-size/</span>
+        <span class="tool-name">Repo Size Analyzer</span>
+        <span class="tool-desc">Analyze repository and node_modules size by package. Identify bloated dependencies, calculate install footprint, and find packages with large bundle impact.</span>
+        <span class="tool-cta">Open Size Analyzer</span>
+    </a>
+
+</div>
+
+
 </section>
 
 <!-- USE CASES -->
+
 <section>
     <div class="section-head">
         <h2>Use Cases</h2>
@@ -486,6 +502,7 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
 </section>
 
 <!-- FAQ -->
+
 <section>
     <div class="section-head">
         <h2>Frequently Asked Questions</h2>
@@ -493,317 +510,375 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
     </div>
     <div class="faq-list">
 
-        <div class="faq-item">
-            <p class="faq-q">What is a dependency graph and how do I visualize it?</p>
-            <p class="faq-a">A dependency graph maps all the packages your project depends on — including transitive dependencies pulled in by your direct dependencies. To visualize it, you can run <code>npm ls --all</code> or use tools like our Dependency Graph Visualizer. Circular dependencies (A depends on B which depends on A) are the most common source of build errors in complex projects.</p>
-        </div>
 
-        <div class="faq-item">
-            <p class="faq-q">How do I detect version conflicts in my npm dependencies?</p>
-            <p class="faq-a">Version conflicts in npm occur when two packages require incompatible versions of a shared dependency. Run <code>npm ls &lt;package-name&gt;</code> to see all resolved versions of a specific package. Our Version Conflict Checker parses your <code>package.json</code> and <code>package-lock.json</code> to identify conflicts, duplicate installs, and incompatible peer dependencies before they cause runtime errors.</p>
-        </div>
-
-        <div class="faq-item">
-            <p class="faq-q">What is version drift in a monorepo?</p>
-            <p class="faq-a">Version drift happens when different packages in a monorepo use different versions of the same dependency — for example, one service using React 17 while another uses React 18. This creates inconsistency, makes shared components harder to maintain, and can cause subtle runtime bugs. Tools like Nx and Turborepo provide <code>enforce-module-boundaries</code> rules to prevent drift, and our Version Drift Analyzer helps you surface it across all packages at once.</p>
-        </div>
-
-        <div class="faq-item">
-            <p class="faq-q">How do I safely simulate a major npm dependency update?</p>
-            <p class="faq-a">Before running a major upgrade (e.g. webpack 4 to 5, or React 17 to 18), you should check for breaking changes in the changelog, identify which of your packages have peer dependency constraints on the old version, and run the update in a branch with a full test suite. Our Update Simulator helps you assess risk by evaluating semver compatibility and identifying the chain of packages that would be affected by a given version bump.</p>
-        </div>
-
-        <div class="faq-item">
-            <p class="faq-q">What causes node_modules to become so large?</p>
-            <p class="faq-a">The main contributors to node_modules size are: transitive dependencies (your dependencies' dependencies), duplicate packages installed at multiple versions, packages with large compiled binaries (like <code>puppeteer</code> or <code>sharp</code>), and development dependencies included in production installs. Use <code>npm install --production</code> to exclude devDependencies in production, and our Repo Size Analyzer to find the heaviest packages in your install footprint.</p>
-        </div>
-
+    <div class="faq-item">
+        <p class="faq-q">What is a dependency graph and how do I visualize it?</p>
+        <p class="faq-a">A dependency graph maps all the packages your project depends on — including transitive dependencies pulled in by your direct dependencies. To visualize it, you can run <code>npm ls --all</code> or use tools like our Dependency Graph Visualizer. Circular dependencies (A depends on B which depends on A) are the most common source of build errors in complex projects.</p>
     </div>
+
+    <div class="faq-item">
+        <p class="faq-q">How do I detect version conflicts in my npm dependencies?</p>
+        <p class="faq-a">Version conflicts in npm occur when two packages require incompatible versions of a shared dependency. Run <code>npm ls &lt;package-name&gt;</code> to see all resolved versions of a specific package. Our Version Conflict Checker parses your <code>package.json</code> and <code>package-lock.json</code> to identify conflicts, duplicate installs, and incompatible peer dependencies before they cause runtime errors.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-q">What is version drift in a monorepo?</p>
+        <p class="faq-a">Version drift happens when different packages in a monorepo use different versions of the same dependency — for example, one service using React 17 while another uses React 18. This creates inconsistency, makes shared components harder to maintain, and can cause subtle runtime bugs. Tools like Nx and Turborepo provide <code>enforce-module-boundaries</code> rules to prevent drift, and our Version Drift Analyzer helps you surface it across all packages at once.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-q">How do I safely simulate a major npm dependency update?</p>
+        <p class="faq-a">Before running a major upgrade (e.g. webpack 4 to 5, or React 17 to 18), you should check for breaking changes in the changelog, identify which of your packages have peer dependency constraints on the old version, and run the update in a branch with a full test suite. Our Update Simulator helps you assess risk by evaluating semver compatibility and identifying the chain of packages that would be affected by a given version bump.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-q">What causes node_modules to become so large?</p>
+        <p class="faq-a">The main contributors to node_modules size are: transitive dependencies (your dependencies' dependencies), duplicate packages installed at multiple versions, packages with large compiled binaries (like <code>puppeteer</code> or <code>sharp</code>), and development dependencies included in production installs. Use <code>npm install --production</code> to exclude devDependencies in production, and our Repo Size Analyzer to find the heaviest packages in your install footprint.</p>
+    </div>
+
+</div>
+
+
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     INSERT THIS ENTIRE BLOCK before the  <!-- LONG-TAIL TAGS -->
+     MONOREPO ANALYZER — Educational Content + Interactive Tool
  ═══════════════════════════════════════════════════════════ -->
 
-
-<!-- CROSS-REPO CALL GRAPH / PROTOBUF GUIDE -->
-
-<section>
+<section id="monorepo-analyzer-section">
     <div class="section-head">
-        <h2>Cross-Repo Call Graph &amp; Protobuf Dependency Tracking</h2>
+        <h2>Monorepo Analyzer</h2>
         <span class="section-rule"></span>
     </div>
 
 
-<!-- Extra CSS needed for this section — add inside your existing <style> block
-     OR keep it here as an inline <style> tag -->
-<style>
-.guide-intro {
-    font-size: .925rem;
-    color: var(--muted);
-    font-weight: 300;
-    line-height: 1.75;
-    max-width: 780px;
-    margin-bottom: 28px;
-}
+<!-- EDUCATIONAL CONTENT -->
+<div style="margin-bottom: 48px; max-width: 860px;">
+    <h3 style="font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 18px; line-height: 1.2;">
+        Understand Your Multi-Package Monorepo Structure
+    </h3>
 
-.guide-intro strong { color: var(--text); font-weight: 600; }
-
-.guide-intro code {
-    font-family: var(--font-mono);
-    font-size: .78em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border-radius: 3px;
-    padding: 1px 6px;
-}
-
-.steps-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 32px;
-}
-
-.step {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 16px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px 20px;
-    transition: border-color var(--transition);
-}
-
-.step:hover { border-color: rgba(34,197,94,.2); }
-
-.step-num {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--accent);
-    line-height: 1;
-    padding-top: 3px;
-    opacity: .7;
-}
-
-.step-body h3 {
-    font-size: .95rem;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 6px;
-    line-height: 1.3;
-}
-
-.step-body p {
-    font-size: .865rem;
-    color: var(--muted);
-    font-weight: 300;
-    line-height: 1.65;
-    margin: 0;
-}
-
-.step-body p code {
-    font-family: var(--font-mono);
-    font-size: .78em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border-radius: 3px;
-    padding: 1px 6px;
-}
-
-.step-body p strong { color: var(--text); font-weight: 600; }
-
-.tool-compare {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 10px;
-    margin-bottom: 32px;
-}
-
-.tool-compare-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px 18px;
-    transition: border-color var(--transition);
-}
-
-.tool-compare-card:hover { border-color: rgba(34,197,94,.2); }
-
-.tcc-name {
-    font-family: var(--font-mono);
-    font-size: .75rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: .04em;
-    margin-bottom: 6px;
-}
-
-.tcc-desc {
-    font-size: .845rem;
-    color: var(--muted);
-    font-weight: 300;
-    line-height: 1.55;
-}
-
-.tcc-desc code {
-    font-family: var(--font-mono);
-    font-size: .78em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border-radius: 3px;
-    padding: 1px 5px;
-}
-
-.tcc-desc strong { color: var(--text); font-weight: 500; }
-
-.proto-note {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: var(--radius);
-    padding: 16px 20px;
-    font-size: .875rem;
-    color: var(--muted);
-    font-weight: 300;
-    line-height: 1.7;
-}
-
-.proto-note strong { color: var(--text); font-weight: 600; }
-.proto-note code {
-    font-family: var(--font-mono);
-    font-size: .78em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border-radius: 3px;
-    padding: 1px 6px;
-}
-
-.approach-label {
-    font-family: var(--font-mono);
-    font-size: .7rem;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 12px;
-    margin-top: 24px;
-    display: block;
-}
-</style>
-
-<p class="guide-intro">
-    Building a <strong>cross-repo call graph to track who depends on a deprecated Protobuf field</strong> is one of the harder dependency problems in distributed systems — it requires analyzing generated code across multiple repositories, not just <code>package.json</code> or <code>go.mod</code> files. Here is the most reliable approach, broken down by step.
-</p>
-
-<!-- STEP-BY-STEP APPROACH -->
-<div class="steps-list">
-
-    <div class="step">
-        <span class="step-num">01</span>
-        <div class="step-body">
-            <h3>Mark the field as deprecated in the .proto file first</h3>
+    <div style="display: flex; flex-direction: column; gap: 16px; color: var(--muted); font-size: .95rem; font-weight: 300; line-height: 1.75;">
+        
+        <div>
+            <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">What is a Monorepo?</h4>
             <p>
-                Before building any graph, mark the field with the <code>deprecated = true</code> option in your <code>.proto</code> file. This is separate from the <code>reserved</code> keyword — <code>deprecated = true</code> keeps the field usable but signals intent, while <code>reserved</code> prevents future use of the field number. In proto3: <code>int32 old_field = 3 [deprecated = true];</code>. This gives generated SDKs a warning hook and makes the field <strong>findable by static analysis</strong> across generated code.
+                A monorepo is a single repository containing multiple distinct projects or packages with well-defined relationships between them. Unlike polyrepos (where each project lives in its own repository), monorepos enable code sharing, atomic commits across projects, and unified dependency management. However, they also introduce complexity: tracking interdependencies, preventing circular references, and maintaining version consistency across packages becomes critical.
             </p>
         </div>
-    </div>
 
-    <div class="step">
-        <span class="step-num">02</span>
-        <div class="step-body">
-            <h3>Use buf breaking to detect field usage across BSR consumers</h3>
-            <p>
-                If you publish your Protobuf schema to the <strong>Buf Schema Registry (BSR)</strong>, you can run <code>buf breaking</code> against all downstream consumers that have declared your module as a dependency in their <code>buf.yaml</code>. The BSR dependency graph gives you a list of every module that imports your <code>.proto</code> — this is the fastest way to enumerate affected repos without manual searching. Run <code>buf dep graph</code> on your module to see the direct consumer list.
-            </p>
+        <div>
+            <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">When Do You Need a Monorepo Analyzer?</h4>
+            <p>Use a monorepo analyzer when you need to:</p>
+            <ul style="list-style: disc; list-style-position: inside; margin-top: 8px; margin-left: 12px;">
+                <li><strong style="color: var(--text);">Visualize package relationships:</strong> Understand which packages depend on which others</li>
+                <li><strong style="color: var(--text);">Detect hidden problems:</strong> Identify circular dependencies, version drift, and orphaned packages before they cause production issues</li>
+                <li><strong style="color: var(--text);">Audit consistency:</strong> Verify that all packages using the same library have compatible versions</li>
+                <li><strong style="color: var(--text);">Scale safely:</strong> Ensure your monorepo remains maintainable as you add more packages</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">What to Look for in a Monorepo Analyzer</h4>
+            <p>A good analyzer should:</p>
+            <ul style="list-style: disc; list-style-position: inside; margin-top: 8px; margin-left: 12px;">
+                <li><strong style="color: var(--text);">Visual dependency graph:</strong> Show how packages connect and depend on each other</li>
+                <li><strong style="color: var(--text);">Circular dependency detection:</strong> Flag when A depends on B and B depends on A (causes build failures)</li>
+                <li><strong style="color: var(--text);">Version drift detection:</strong> Alert when two packages use different versions of the same dependency</li>
+                <li><strong style="color: var(--text);">Orphaned package detection:</strong> Find packages that aren't referenced by any other workspace</li>
+                <li><strong style="color: var(--text);">Actionable recommendations:</strong> Provide concrete steps to fix identified issues</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">Real-World Use Cases</h4>
+            <div style="margin-left: 12px; display: flex; flex-direction: column; gap: 8px;">
+                <div><strong style="color: var(--text);">Turborepo / Nx Monorepos:</strong> Analyze workspace structure to enforce module boundaries and task dependencies</div>
+                <div><strong style="color: var(--text);">React Monorepos:</strong> Detect when UI components and main app use different React versions, causing runtime errors</div>
+                <div><strong style="color: var(--text);">Microservices Shared Libraries:</strong> Ensure all services consuming a shared library use the same version to prevent subtle bugs</div>
+                <div><strong style="color: var(--text);">Large Organizations:</strong> Audit hundreds of packages to identify coupling, enforce conventions, and plan migrations</div>
+            </div>
         </div>
     </div>
-
-    <div class="step">
-        <span class="step-num">03</span>
-        <div class="step-body">
-            <h3>Search generated code with ast-grep or semgrep across repos</h3>
-            <p>
-                Generated Protobuf code (Go structs, Python dataclasses, Java POJOs) has predictable field accessor patterns. Use <strong>ast-grep</strong> or <strong>semgrep</strong> with a pattern matching the deprecated field name: e.g. <code>ast-grep --pattern '$_\.OldField' --lang go</code> across a cloned copy of all consumer repos. This finds actual call sites — not just import declarations — so you know which services <em>read or write</em> the field, not just which ones import the proto package.
-            </p>
-        </div>
-    </div>
-
-    <div class="step">
-        <span class="step-num">04</span>
-        <div class="step-body">
-            <h3>Build the call graph with Sourcegraph or grep.app at scale</h3>
-            <p>
-                For organizations with many repos, running local clones is impractical. <strong>Sourcegraph</strong> indexes all your repos and supports structural search — search for the generated field accessor pattern across your entire codebase with one query. <strong>grep.app</strong> does the same for public GitHub repos. The result is a cross-repo call graph showing every file and function that references the deprecated field, which you can export and feed into a dependency graph visualizer.
-            </p>
-        </div>
-    </div>
-
-    <div class="step">
-        <span class="step-num">05</span>
-        <div class="step-body">
-            <h3>Map results into a dependency graph by repo and team owner</h3>
-            <p>
-                Once you have the list of call sites, group them by repository and cross-reference with your CODEOWNERS or team ownership file. The output is a <strong>dependency graph where each node is a repo</strong> and edges represent "this repo uses the deprecated field." Sort by frequency of use to prioritize migration. Repos with high usage need a migration path before you can mark the field as <code>reserved</code>. This graph is what the <a href="dep-graph/" style="color:var(--accent);">Dependency Graph Visualizer</a> above helps you visualize once you have the edge list.
-            </p>
-        </div>
-    </div>
-
 </div>
 
-<!-- TOOL COMPARISON -->
-<span class="approach-label">Tools that solve this problem</span>
-<div class="tool-compare">
+<!-- INTERACTIVE TOOL -->
+<div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 24px;">
+    <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 18px;">📊 Analyze Your Monorepo Structure</h3>
 
-    <div class="tool-compare-card">
-        <p class="tcc-name">buf CLI + BSR</p>
-        <p class="tcc-desc"><strong>Best for:</strong> teams already using the Buf Schema Registry. <code>buf dep graph</code> gives you the full dependency graph of your Protobuf module across all registered consumers. No code cloning required.</p>
+    <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
+        <button onclick="loadMonorepoSample()" style="padding: 8px 16px; background: var(--accent); color: #000; border: none; border-radius: var(--radius); cursor: pointer; font-family: var(--font-mono); font-size: .8rem; font-weight: 600; transition: all var(--transition);" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            📋 Load Sample
+        </button>
+        <label style="padding: 8px 16px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; font-family: var(--font-mono); font-size: .8rem; font-weight: 600; color: var(--text); transition: all var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+            📤 Upload JSON
+            <input type="file" accept=".json" onchange="handleMonorepoFileUpload(event)" style="display: none;">
+        </label>
     </div>
 
-    <div class="tool-compare-card">
-        <p class="tcc-name">ast-grep / semgrep</p>
-        <p class="tcc-desc"><strong>Best for:</strong> finding actual field access sites in generated code across cloned repos. Supports Go, Java, Python, TypeScript. Outputs precise file:line locations for each call site.</p>
+    <textarea id="monorepoJsonInput" 
+        placeholder="Paste your package.json or monorepo workspace configuration here..."
+        style="width: 100%; height: 180px; padding: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-family: var(--font-mono); font-size: .85rem; resize: vertical; transition: border-color var(--transition);"
+        onkeydown="this.style.borderColor='var(--accent)'" 
+        onblur="this.style.borderColor='var(--border)'"></textarea>
+
+    <button onclick="analyzeMonorepoStructure()" style="width: 100%; padding: 12px 16px; background: var(--accent); color: #000; border: none; border-radius: var(--radius); cursor: pointer; font-family: var(--font-display); font-size: .95rem; font-weight: 600; margin-top: 12px; transition: all var(--transition);" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+        Analyze Monorepo
+    </button>
+
+    <!-- Error Display -->
+    <div id="monorepoErrorContainer" style="display: none; margin-top: 16px; padding: 12px 16px; background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3); border-radius: var(--radius); color: #fca5a5; font-size: .9rem;">
+        <span id="monorepoErrorText"></span>
     </div>
 
-    <div class="tool-compare-card">
-        <p class="tcc-name">Sourcegraph structural search</p>
-        <p class="tcc-desc"><strong>Best for:</strong> large engineering organizations. Indexes all repos and supports cross-language structural search without cloning. The <code>:[field]</code> pattern syntax finds accessor usage precisely.</p>
-    </div>
+    <!-- Results Display -->
+    <div id="monorepoResultsContainer" style="display: none; margin-top: 20px; display: flex; flex-direction: column; gap: 14px;">
+        
+        <!-- Overview -->
+        <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px;">
+            <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">✅ Monorepo Detected</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: .9rem;">
+                <div>
+                    <p style="color: var(--muted); margin-bottom: 4px;">Total Packages</p>
+                    <p id="monorepoPackageCount" style="color: var(--accent); font-size: 1.4rem; font-weight: 600;">0</p>
+                </div>
+                <div>
+                    <p style="color: var(--muted); margin-bottom: 4px;">Issues Found</p>
+                    <p id="monorepoIssueCount" style="color: #fbbf24; font-size: 1.4rem; font-weight: 600;">0</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="tool-compare-card">
-        <p class="tcc-name">GitHub code search (REST API)</p>
-        <p class="tcc-desc"><strong>Best for:</strong> public repos or GitHub Enterprise. Use <code>GET /search/code?q=OldField+language:go</code> to enumerate all repos using the generated field name across your org.</p>
-    </div>
+        <!-- Issues -->
+        <div id="monorepoIssuesContainer" style="display: none;">
+            <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">⚠️ Issues Detected</p>
+            <div id="monorepoIssuesList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
 
-    <div class="tool-compare-card">
-        <p class="tcc-name">deps.dev + OpenSSF</p>
-        <p class="tcc-desc"><strong>Best for:</strong> package-level dependency graphs (not field-level). Maps which modules import which Protobuf package version. Useful for finding the consumer list before doing call-site analysis.</p>
-    </div>
+        <!-- Recommendations -->
+        <div id="monorepoRecsContainer" style="display: none;">
+            <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">💡 Recommendations</p>
+            <div id="monorepoRecsList" style="display: flex; flex-direction: column; gap: 6px;"></div>
+        </div>
 
-    <div class="tool-compare-card">
-        <p class="tcc-name">Neo4j + code ingestion</p>
-        <p class="tcc-desc"><strong>Best for:</strong> persistent, queryable dependency graphs. Ingest AST output into a graph database and query with Cypher: <code>MATCH (s)-[:CALLS]->(f:Field {name:'old_field'}) RETURN s</code>.</p>
+        <!-- Packages List -->
+        <div>
+            <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">📦 Packages in Monorepo</p>
+            <div id="monorepoPackagesList" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
+        </div>
     </div>
-
 </div>
 
-<!-- PROTO-SPECIFIC NOTE -->
-<div class="proto-note">
-    <strong>Protobuf-specific note on deprecated vs reserved:</strong> <code>deprecated = true</code> is the right first step — it preserves backward compatibility while signaling intent. <code>reserved</code> should only be used after <em>all consumers have migrated</em>, because it makes the field number and name permanently unavailable for future use. The call graph you build in steps 1–5 above gives you the migration checklist before you can safely move from <code>deprecated</code> to <code>reserved</code>. If a field is in a widely-consumed shared schema, expect 2–6 months of migration time across dependent teams.
+<!-- Format Help -->
+<div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; font-size: .85rem;">
+    <p style="color: var(--muted); margin-bottom: 8px;">📝 <strong style="color: var(--text);">Input Format:</strong> Upload or paste JSON with workspaces, packageVersions, and dependencies fields</p>
+    <pre style="background: var(--surface-2); padding: 10px 12px; border-radius: 4px; color: var(--accent); font-family: var(--font-mono); font-size: .75rem; overflow-x: auto; margin: 0;">{
+
+
+“workspaces”: [“packages/ui”, “packages/api”],
+“packageVersions”: { “packages/ui”: { “react”: “18.2.0” } },
+“dependencies”: { “packages/ui”: [“packages/shared”] }
+}</pre>
 </div>
 
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     END OF NEW SECTION — paste the above block immediately
-     before the existing <!-- LONG-TAIL TAGS --> comment
-
-
+     JAVASCRIPT for Monorepo Analyzer
  ═══════════════════════════════════════════════════════════ -->
 
-<!-- LONG-TAIL TAGS -->
+<script>
+const monorepoSampleData = {
+    "name": "my-monorepo",
+    "workspaces": ["packages/ui", "packages/api", "packages/shared"],
+    "packageVersions": {
+        "packages/ui": { "react": "18.2.0", "@shared/components": "1.0.0" },
+        "packages/api": { "react": "17.0.0", "@shared/utils": "1.0.0" },
+        "packages/shared": { "react": "18.2.0" }
+    },
+    "dependencies": {
+        "packages/ui": ["packages/shared"],
+        "packages/api": ["packages/shared"],
+        "packages/shared": []
+    }
+};
 
+function loadMonorepoSample() {
+    document.getElementById('monorepoJsonInput').value = JSON.stringify(monorepoSampleData, null, 2);
+}
+
+function handleMonorepoFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            document.getElementById('monorepoJsonInput').value = e.target.result;
+        };
+        reader.readAsText(file);
+    }
+}
+
+function analyzeMonorepoStructure() {
+    const input = document.getElementById('monorepoJsonInput').value;
+    const errorContainer = document.getElementById('monorepoErrorContainer');
+    const resultsContainer = document.getElementById('monorepoResultsContainer');
+
+    try {
+        let packageData = JSON.parse(input);
+
+        const isMonorepo = packageData.workspaces || packageData.packages;
+        if (!isMonorepo) {
+            throw new Error('This does not appear to be a monorepo. Add "workspaces" or "packages" field.');
+        }
+
+        const packages = packageData.workspaces || packageData.packages || [];
+        if (!packages.length) {
+            throw new Error('No packages found in workspaces or packages array.');
+        }
+
+        const analysis = { issues: [], recommendations: [], packages: packages };
+
+        // Version drift detection
+        if (packageData.packageVersions) {
+            const versionMap = {};
+            Object.entries(packageData.packageVersions).forEach(([pkg, deps]) => {
+                Object.entries(deps).forEach(([dep, version]) => {
+                    if (!versionMap[dep]) versionMap[dep] = new Set();
+                    versionMap[dep].add(version);
+                });
+            });
+
+            Object.entries(versionMap).forEach(([dep, versions]) => {
+                if (versions.size > 1) {
+                    analysis.issues.push({
+                        type: 'version-drift',
+                        severity: 'warning',
+                        title: `Version Drift: ${dep}`,
+                        description: `Package "${dep}" has multiple versions: ${Array.from(versions).join(', ')}`
+                    });
+                }
+            });
+        }
+
+        // Circular dependency detection
+        if (packageData.dependencies) {
+            const edges = [];
+            Object.entries(packageData.dependencies).forEach(([pkg, deps]) => {
+                if (Array.isArray(deps)) {
+                    deps.forEach(dep => edges.push({ from: pkg, to: dep }));
+                }
+            });
+
+            edges.forEach(edge => {
+                edges.forEach(e2 => {
+                    if (e2.from === edge.to && e2.to === edge.from) {
+                        analysis.issues.push({
+                            type: 'circular',
+                            severity: 'error',
+                            title: 'Circular Dependency Detected',
+                            description: `${edge.from} ↔ ${edge.to} creates a circular dependency loop.`
+                        });
+                    }
+                });
+            });
+        }
+
+        // Orphaned packages detection
+        if (packageData.dependencies) {
+            const referenced = new Set();
+            Object.values(packageData.dependencies).forEach(deps => {
+                if (Array.isArray(deps)) deps.forEach(d => referenced.add(d));
+            });
+
+            packages.forEach(pkg => {
+                const pkgName = typeof pkg === 'string' ? pkg : pkg.name || pkg;
+                if (!referenced.has(pkgName) && pkgName !== 'root') {
+                    analysis.issues.push({
+                        type: 'orphaned',
+                        severity: 'info',
+                        title: `Orphaned Package: ${pkgName}`,
+                        description: `Package "${pkgName}" is not referenced by any other package in the monorepo.`
+                    });
+                }
+            });
+        }
+
+        // Recommendations
+        if (analysis.issues.length === 0) {
+            analysis.recommendations.push({ priority: 'high', text: '✅ Your monorepo structure looks healthy. Continue monitoring for version drift.' });
+        } else {
+            const errors = analysis.issues.filter(i => i.severity === 'error').length;
+            const warnings = analysis.issues.filter(i => i.severity === 'warning').length;
+            if (errors > 0) analysis.recommendations.push({ priority: 'critical', text: `🔴 Resolve ${errors} critical issues before deploying.` });
+            if (warnings > 0) analysis.recommendations.push({ priority: 'high', text: `🟡 Address ${warnings} version drift issues to improve consistency.` });
+        }
+        analysis.recommendations.push({ priority: 'medium', text: '💡 Use Nx or Turborepo to enforce module boundaries automatically.' });
+
+        displayMonorepoResults(analysis);
+        errorContainer.style.display = 'none';
+        resultsContainer.style.display = 'flex';
+
+    } catch (err) {
+        errorContainer.style.display = 'block';
+        document.getElementById('monorepoErrorText').textContent = err.message;
+        resultsContainer.style.display = 'none';
+    }
+}
+
+function displayMonorepoResults(analysis) {
+    document.getElementById('monorepoPackageCount').textContent = analysis.packages.length;
+    document.getElementById('monorepoIssueCount').textContent = analysis.issues.length;
+
+    const issuesContainer = document.getElementById('monorepoIssuesContainer');
+    const issuesList = document.getElementById('monorepoIssuesList');
+    
+    if (analysis.issues.length > 0) {
+        issuesList.innerHTML = analysis.issues.map(issue => {
+            const bgColor = issue.severity === 'error' ? 'rgba(239,68,68,.1)' : 
+                          issue.severity === 'warning' ? 'rgba(251,191,36,.1)' : 'rgba(59,130,246,.1)';
+            const borderColor = issue.severity === 'error' ? 'rgba(239,68,68,.3)' : 
+                              issue.severity === 'warning' ? 'rgba(251,191,36,.3)' : 'rgba(59,130,246,.3)';
+            const textColor = issue.severity === 'error' ? '#fca5a5' : 
+                            issue.severity === 'warning' ? '#fcd34d' : '#93c5fd';
+            return `
+                <div style="background: ${bgColor}; border: 1px solid ${borderColor}; border-radius: var(--radius); padding: 10px 12px; color: ${textColor}; font-size: .85rem;">
+                    <p style="font-weight: 600; margin-bottom: 4px; color: ${textColor};">${issue.title}</p>
+                    <p style="font-size: .8rem; margin: 0;">${issue.description}</p>
+                </div>
+            `;
+        }).join('');
+        issuesContainer.style.display = 'block';
+    } else {
+        issuesContainer.style.display = 'none';
+    }
+
+    const recsContainer = document.getElementById('monorepoRecsContainer');
+    const recsList = document.getElementById('monorepoRecsList');
+    recsList.innerHTML = analysis.recommendations.map(rec => {
+        const bgColor = rec.priority === 'critical' ? 'rgba(239,68,68,.1)' : 
+                       rec.priority === 'high' ? 'rgba(251,191,36,.1)' : 'rgba(59,130,246,.1)';
+        const textColor = rec.priority === 'critical' ? '#fca5a5' : 
+                         rec.priority === 'high' ? '#fcd34d' : '#93c5fd';
+        return `
+            <p style="background: ${bgColor}; border: 1px solid ${bgColor.replace('.1', '.3')}; border-radius: var(--radius); padding: 8px 12px; color: var(--muted); font-size: .85rem; display: flex; align-items: center; gap: 8px;">
+                <span style="flex-shrink: 0; width: 4px; height: 4px; border-radius: 50%; background: ${textColor};"></span>
+                ${rec.text}
+            </p>
+        `;
+    }).join('');
+    recsContainer.style.display = 'block';
+
+    const packagesList = document.getElementById('monorepoPackagesList');
+    packagesList.innerHTML = analysis.packages.map(pkg => {
+        const pkgName = typeof pkg === 'string' ? pkg : pkg.name || pkg;
+        return `<span style="background: var(--accent-dim); border: 1px solid var(--border-hi); color: var(--accent); padding: 5px 10px; border-radius: 100px; font-family: var(--font-mono); font-size: .75rem;">${pkgName}</span>`;
+    }).join('');
+}
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<!-- LONG-TAIL TAGS -->
 
 <section>
     <div class="section-head">
@@ -831,13 +906,13 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
 </section>
 
 <!-- FOOTER -->
+
 <footer>
     <div class="footer-inner">
         <span class="footer-brand">Repo Dependency Tools</span>
         <p>6 free tools for developers and DevOps teams managing complex dependency ecosystems.</p>
     </div>
 </footer>
-
 
 </div>
 </body>
