@@ -397,150 +397,6 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
 
 <!-- DEPENDENCY GRAPH & STRUCTURE -->
 
-<section>
-    <div class="section-head">
-        <h2>Dependency Graph &amp; Structure</h2>
-        <span class="section-rule"></span>
-    </div>
-    <div class="tools-grid">
-
-
-    <a class="tool" href="dep-graph/">
-        <span class="tool-path">dep-graph/</span>
-        <span class="tool-name">Dependency Graph Visualizer</span>
-        <span class="tool-desc">Visualize package dependency graphs and relationships across your project. Detect circular dependencies, deep dependency chains, and transitive dependencies.</span>
-        <span class="tool-cta">Open Dep Graph</span>
-    </a>
-
-    <a class="tool" href="monorepo/">
-        <span class="tool-path">monorepo/</span>
-        <span class="tool-name">Monorepo Analyzer</span>
-        <span class="tool-desc">Analyze monorepo structures and inter-package relationships. Understand which packages depend on which, identify shared dependencies, and surface coupling issues.</span>
-        <span class="tool-cta">Open Monorepo Analyzer</span>
-    </a>
-
-</div>
-
-
-</section>
-
-<!-- VERSION MANAGEMENT -->
-
-<section>
-    <div class="section-head">
-        <h2>Version Management &amp; Conflicts</h2>
-        <span class="section-rule"></span>
-    </div>
-    <div class="tools-grid">
-
-
-    <a class="tool" href="version-conflict/">
-        <span class="tool-path">version-conflict/</span>
-        <span class="tool-name">Version Conflict Checker</span>
-        <span class="tool-desc">Detect version conflicts between dependencies in your package.json or lock file. Find incompatible peer dependencies and duplicate packages at different versions.</span>
-        <span class="tool-cta">Open Conflict Checker</span>
-    </a>
-
-    <a class="tool" href="version-drift/">
-        <span class="tool-path">version-drift/</span>
-        <span class="tool-name">Version Drift Analyzer</span>
-        <span class="tool-desc">Analyze version drift across services, packages, and microservices in a monorepo. Identify packages pinned to outdated versions and standardize your dependency baseline.</span>
-        <span class="tool-cta">Open Drift Analyzer</span>
-    </a>
-
-</div>
-
-
-</section>
-
-<!-- UPDATES & INSIGHTS -->
-
-<section>
-    <div class="section-head">
-        <h2>Updates &amp; Repository Insights</h2>
-        <span class="section-rule"></span>
-    </div>
-    <div class="tools-grid">
-
-
-    <a class="tool" href="update-sim/">
-        <span class="tool-path">update-sim/</span>
-        <span class="tool-name">Dependency Update Simulator</span>
-        <span class="tool-desc">Simulate dependency updates and evaluate potential breaking changes before running npm update or yarn upgrade. Assess risk by semver level (patch/minor/major).</span>
-        <span class="tool-cta">Open Update Simulator</span>
-    </a>
-
-    <a class="tool" href="repo-size/">
-        <span class="tool-path">repo-size/</span>
-        <span class="tool-name">Repo Size Analyzer</span>
-        <span class="tool-desc">Analyze repository and node_modules size by package. Identify bloated dependencies, calculate install footprint, and find packages with large bundle impact.</span>
-        <span class="tool-cta">Open Size Analyzer</span>
-    </a>
-
-</div>
-
-
-</section>
-
-<!-- USE CASES -->
-
-<section>
-    <div class="section-head">
-        <h2>Use Cases</h2>
-        <span class="section-rule"></span>
-    </div>
-    <div class="use-grid">
-        <div class="use-item"><span class="use-arrow">-&gt;</span>Visualizing deep transitive dependency chains in a Node.js project</div>
-        <div class="use-item"><span class="use-arrow">-&gt;</span>Detecting incompatible peer dependency versions before npm install</div>
-        <div class="use-item"><span class="use-arrow">-&gt;</span>Auditing package version consistency across a monorepo with Nx or Turborepo</div>
-        <div class="use-item"><span class="use-arrow">-&gt;</span>Simulating a React or webpack major version upgrade before executing it</div>
-        <div class="use-item"><span class="use-arrow">-&gt;</span>Identifying circular dependencies causing build failures</div>
-        <div class="use-item"><span class="use-arrow">-&gt;</span>Tracking version drift in microservices sharing a common library</div>
-        <div class="use-item"><span class="use-arrow">-&gt;</span>Reducing node_modules bloat by finding duplicate or oversized packages</div>
-        <div class="use-item"><span class="use-arrow">-&gt;</span>Planning a safe dependency upgrade path for a production codebase</div>
-    </div>
-</section>
-
-<!-- FAQ -->
-
-<section>
-    <div class="section-head">
-        <h2>Frequently Asked Questions</h2>
-        <span class="section-rule"></span>
-    </div>
-    <div class="faq-list">
-
-
-    <div class="faq-item">
-        <p class="faq-q">What is a dependency graph and how do I visualize it?</p>
-        <p class="faq-a">A dependency graph maps all the packages your project depends on — including transitive dependencies pulled in by your direct dependencies. To visualize it, you can run <code>npm ls --all</code> or use tools like our Dependency Graph Visualizer. Circular dependencies (A depends on B which depends on A) are the most common source of build errors in complex projects.</p>
-    </div>
-
-    <div class="faq-item">
-        <p class="faq-q">How do I detect version conflicts in my npm dependencies?</p>
-        <p class="faq-a">Version conflicts in npm occur when two packages require incompatible versions of a shared dependency. Run <code>npm ls &lt;package-name&gt;</code> to see all resolved versions of a specific package. Our Version Conflict Checker parses your <code>package.json</code> and <code>package-lock.json</code> to identify conflicts, duplicate installs, and incompatible peer dependencies before they cause runtime errors.</p>
-    </div>
-
-    <div class="faq-item">
-        <p class="faq-q">What is version drift in a monorepo?</p>
-        <p class="faq-a">Version drift happens when different packages in a monorepo use different versions of the same dependency — for example, one service using React 17 while another uses React 18. This creates inconsistency, makes shared components harder to maintain, and can cause subtle runtime bugs. Tools like Nx and Turborepo provide <code>enforce-module-boundaries</code> rules to prevent drift, and our Version Drift Analyzer helps you surface it across all packages at once.</p>
-    </div>
-
-    <div class="faq-item">
-        <p class="faq-q">How do I safely simulate a major npm dependency update?</p>
-        <p class="faq-a">Before running a major upgrade (e.g. webpack 4 to 5, or React 17 to 18), you should check for breaking changes in the changelog, identify which of your packages have peer dependency constraints on the old version, and run the update in a branch with a full test suite. Our Update Simulator helps you assess risk by evaluating semver compatibility and identifying the chain of packages that would be affected by a given version bump.</p>
-    </div>
-
-    <div class="faq-item">
-        <p class="faq-q">What causes node_modules to become so large?</p>
-        <p class="faq-a">The main contributors to node_modules size are: transitive dependencies (your dependencies' dependencies), duplicate packages installed at multiple versions, packages with large compiled binaries (like <code>puppeteer</code> or <code>sharp</code>), and development dependencies included in production installs. Use <code>npm install --production</code> to exclude devDependencies in production, and our Repo Size Analyzer to find the heaviest packages in your install footprint.</p>
-    </div>
-
-</div>
-
-
-</section>
-
 <!-- ═══════════════════════════════════════════════════════════
      MONOREPO ANALYZER — Educational Content + Interactive Tool
  ═══════════════════════════════════════════════════════════ -->
@@ -875,6 +731,150 @@ function displayMonorepoResults(analysis) {
     }).join('');
 }
 </script>
+
+<section>
+    <div class="section-head">
+        <h2>Dependency Graph &amp; Structure</h2>
+        <span class="section-rule"></span>
+    </div>
+    <div class="tools-grid">
+
+
+    <a class="tool" href="dep-graph/">
+        <span class="tool-path">dep-graph/</span>
+        <span class="tool-name">Dependency Graph Visualizer</span>
+        <span class="tool-desc">Visualize package dependency graphs and relationships across your project. Detect circular dependencies, deep dependency chains, and transitive dependencies.</span>
+        <span class="tool-cta">Open Dep Graph</span>
+    </a>
+
+    <a class="tool" href="monorepo/">
+        <span class="tool-path">monorepo/</span>
+        <span class="tool-name">Monorepo Analyzer</span>
+        <span class="tool-desc">Analyze monorepo structures and inter-package relationships. Understand which packages depend on which, identify shared dependencies, and surface coupling issues.</span>
+        <span class="tool-cta">Open Monorepo Analyzer</span>
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- VERSION MANAGEMENT -->
+
+<section>
+    <div class="section-head">
+        <h2>Version Management &amp; Conflicts</h2>
+        <span class="section-rule"></span>
+    </div>
+    <div class="tools-grid">
+
+
+    <a class="tool" href="version-conflict/">
+        <span class="tool-path">version-conflict/</span>
+        <span class="tool-name">Version Conflict Checker</span>
+        <span class="tool-desc">Detect version conflicts between dependencies in your package.json or lock file. Find incompatible peer dependencies and duplicate packages at different versions.</span>
+        <span class="tool-cta">Open Conflict Checker</span>
+    </a>
+
+    <a class="tool" href="version-drift/">
+        <span class="tool-path">version-drift/</span>
+        <span class="tool-name">Version Drift Analyzer</span>
+        <span class="tool-desc">Analyze version drift across services, packages, and microservices in a monorepo. Identify packages pinned to outdated versions and standardize your dependency baseline.</span>
+        <span class="tool-cta">Open Drift Analyzer</span>
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- UPDATES & INSIGHTS -->
+
+<section>
+    <div class="section-head">
+        <h2>Updates &amp; Repository Insights</h2>
+        <span class="section-rule"></span>
+    </div>
+    <div class="tools-grid">
+
+
+    <a class="tool" href="update-sim/">
+        <span class="tool-path">update-sim/</span>
+        <span class="tool-name">Dependency Update Simulator</span>
+        <span class="tool-desc">Simulate dependency updates and evaluate potential breaking changes before running npm update or yarn upgrade. Assess risk by semver level (patch/minor/major).</span>
+        <span class="tool-cta">Open Update Simulator</span>
+    </a>
+
+    <a class="tool" href="repo-size/">
+        <span class="tool-path">repo-size/</span>
+        <span class="tool-name">Repo Size Analyzer</span>
+        <span class="tool-desc">Analyze repository and node_modules size by package. Identify bloated dependencies, calculate install footprint, and find packages with large bundle impact.</span>
+        <span class="tool-cta">Open Size Analyzer</span>
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- USE CASES -->
+
+<section>
+    <div class="section-head">
+        <h2>Use Cases</h2>
+        <span class="section-rule"></span>
+    </div>
+    <div class="use-grid">
+        <div class="use-item"><span class="use-arrow">-&gt;</span>Visualizing deep transitive dependency chains in a Node.js project</div>
+        <div class="use-item"><span class="use-arrow">-&gt;</span>Detecting incompatible peer dependency versions before npm install</div>
+        <div class="use-item"><span class="use-arrow">-&gt;</span>Auditing package version consistency across a monorepo with Nx or Turborepo</div>
+        <div class="use-item"><span class="use-arrow">-&gt;</span>Simulating a React or webpack major version upgrade before executing it</div>
+        <div class="use-item"><span class="use-arrow">-&gt;</span>Identifying circular dependencies causing build failures</div>
+        <div class="use-item"><span class="use-arrow">-&gt;</span>Tracking version drift in microservices sharing a common library</div>
+        <div class="use-item"><span class="use-arrow">-&gt;</span>Reducing node_modules bloat by finding duplicate or oversized packages</div>
+        <div class="use-item"><span class="use-arrow">-&gt;</span>Planning a safe dependency upgrade path for a production codebase</div>
+    </div>
+</section>
+
+<!-- FAQ -->
+
+<section>
+    <div class="section-head">
+        <h2>Frequently Asked Questions</h2>
+        <span class="section-rule"></span>
+    </div>
+    <div class="faq-list">
+
+
+    <div class="faq-item">
+        <p class="faq-q">What is a dependency graph and how do I visualize it?</p>
+        <p class="faq-a">A dependency graph maps all the packages your project depends on — including transitive dependencies pulled in by your direct dependencies. To visualize it, you can run <code>npm ls --all</code> or use tools like our Dependency Graph Visualizer. Circular dependencies (A depends on B which depends on A) are the most common source of build errors in complex projects.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-q">How do I detect version conflicts in my npm dependencies?</p>
+        <p class="faq-a">Version conflicts in npm occur when two packages require incompatible versions of a shared dependency. Run <code>npm ls &lt;package-name&gt;</code> to see all resolved versions of a specific package. Our Version Conflict Checker parses your <code>package.json</code> and <code>package-lock.json</code> to identify conflicts, duplicate installs, and incompatible peer dependencies before they cause runtime errors.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-q">What is version drift in a monorepo?</p>
+        <p class="faq-a">Version drift happens when different packages in a monorepo use different versions of the same dependency — for example, one service using React 17 while another uses React 18. This creates inconsistency, makes shared components harder to maintain, and can cause subtle runtime bugs. Tools like Nx and Turborepo provide <code>enforce-module-boundaries</code> rules to prevent drift, and our Version Drift Analyzer helps you surface it across all packages at once.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-q">How do I safely simulate a major npm dependency update?</p>
+        <p class="faq-a">Before running a major upgrade (e.g. webpack 4 to 5, or React 17 to 18), you should check for breaking changes in the changelog, identify which of your packages have peer dependency constraints on the old version, and run the update in a branch with a full test suite. Our Update Simulator helps you assess risk by evaluating semver compatibility and identifying the chain of packages that would be affected by a given version bump.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-q">What causes node_modules to become so large?</p>
+        <p class="faq-a">The main contributors to node_modules size are: transitive dependencies (your dependencies' dependencies), duplicate packages installed at multiple versions, packages with large compiled binaries (like <code>puppeteer</code> or <code>sharp</code>), and development dependencies included in production installs. Use <code>npm install --production</code> to exclude devDependencies in production, and our Repo Size Analyzer to find the heaviest packages in your install footprint.</p>
+    </div>
+
+</div>
+
+
+</section>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
 
