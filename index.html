@@ -378,7 +378,6 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
 <div class="wrapper">
 
 <!-- HEADER -->
-
 <header>
     <div class="header-label">Repo Dependency Toolkit</div>
     <h1>
@@ -396,7 +395,6 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
 </header>
 
 <!-- DEPENDENCY GRAPH & STRUCTURE -->
-
 <!-- ═══════════════════════════════════════════════════════════
      MONOREPO ANALYZER — Educational Content + Interactive Tool
  ═══════════════════════════════════════════════════════════ -->
@@ -407,136 +405,136 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
         <span class="section-rule"></span>
     </div>
 
-
-<!-- EDUCATIONAL CONTENT -->
-<div style="margin-bottom: 48px; max-width: 860px;">
-    <h3 style="font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 18px; line-height: 1.2;">
-        Understand Your Multi-Package Monorepo Structure
-    </h3>
-
-    <div style="display: flex; flex-direction: column; gap: 16px; color: var(--muted); font-size: .95rem; font-weight: 300; line-height: 1.75;">
-        
-        <div>
-            <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">What is a Monorepo?</h4>
-            <p>
-                A monorepo is a single repository containing multiple distinct projects or packages with well-defined relationships between them. Unlike polyrepos (where each project lives in its own repository), monorepos enable code sharing, atomic commits across projects, and unified dependency management. However, they also introduce complexity: tracking interdependencies, preventing circular references, and maintaining version consistency across packages becomes critical.
-            </p>
-        </div>
-
-        <div>
-            <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">When Do You Need a Monorepo Analyzer?</h4>
-            <p>Use a monorepo analyzer when you need to:</p>
-            <ul style="list-style: disc; list-style-position: inside; margin-top: 8px; margin-left: 12px;">
-                <li><strong style="color: var(--text);">Visualize package relationships:</strong> Understand which packages depend on which others</li>
-                <li><strong style="color: var(--text);">Detect hidden problems:</strong> Identify circular dependencies, version drift, and orphaned packages before they cause production issues</li>
-                <li><strong style="color: var(--text);">Audit consistency:</strong> Verify that all packages using the same library have compatible versions</li>
-                <li><strong style="color: var(--text);">Scale safely:</strong> Ensure your monorepo remains maintainable as you add more packages</li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">What to Look for in a Monorepo Analyzer</h4>
-            <p>A good analyzer should:</p>
-            <ul style="list-style: disc; list-style-position: inside; margin-top: 8px; margin-left: 12px;">
-                <li><strong style="color: var(--text);">Visual dependency graph:</strong> Show how packages connect and depend on each other</li>
-                <li><strong style="color: var(--text);">Circular dependency detection:</strong> Flag when A depends on B and B depends on A (causes build failures)</li>
-                <li><strong style="color: var(--text);">Version drift detection:</strong> Alert when two packages use different versions of the same dependency</li>
-                <li><strong style="color: var(--text);">Orphaned package detection:</strong> Find packages that aren't referenced by any other workspace</li>
-                <li><strong style="color: var(--text);">Actionable recommendations:</strong> Provide concrete steps to fix identified issues</li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">Real-World Use Cases</h4>
-            <div style="margin-left: 12px; display: flex; flex-direction: column; gap: 8px;">
-                <div><strong style="color: var(--text);">Turborepo / Nx Monorepos:</strong> Analyze workspace structure to enforce module boundaries and task dependencies</div>
-                <div><strong style="color: var(--text);">React Monorepos:</strong> Detect when UI components and main app use different React versions, causing runtime errors</div>
-                <div><strong style="color: var(--text);">Microservices Shared Libraries:</strong> Ensure all services consuming a shared library use the same version to prevent subtle bugs</div>
-                <div><strong style="color: var(--text);">Large Organizations:</strong> Audit hundreds of packages to identify coupling, enforce conventions, and plan migrations</div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- EDUCATIONAL CONTENT -->
+    <div style="margin-bottom: 48px; max-width: 860px;">
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 18px; line-height: 1.2;">
+            Understand Your Multi-Package Monorepo Structure
+        </h3>
 
 <!-- INTERACTIVE TOOL -->
-<div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 24px;">
-    <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 18px;">📊 Analyze Your Monorepo Structure</h3>
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 24px;">
+        <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 18px;">📊 Analyze Your Monorepo Structure</h3>
 
-    <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
-        <button onclick="loadMonorepoSample()" style="padding: 8px 16px; background: var(--accent); color: #000; border: none; border-radius: var(--radius); cursor: pointer; font-family: var(--font-mono); font-size: .8rem; font-weight: 600; transition: all var(--transition);" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-            📋 Load Sample
+        <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
+            <button onclick="loadMonorepoSample()" style="padding: 8px 16px; background: var(--accent); color: #000; border: none; border-radius: var(--radius); cursor: pointer; font-family: var(--font-mono); font-size: .8rem; font-weight: 600; transition: all var(--transition);" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+                📋 Load Sample
+            </button>
+            <label style="padding: 8px 16px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; font-family: var(--font-mono); font-size: .8rem; font-weight: 600; color: var(--text); transition: all var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                📤 Upload JSON
+                <input type="file" accept=".json" onchange="handleMonorepoFileUpload(event)" style="display: none;">
+            </label>
+        </div>
+
+        <textarea id="monorepoJsonInput" 
+            placeholder="Paste your package.json or monorepo workspace configuration here..."
+            style="width: 100%; height: 180px; padding: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-family: var(--font-mono); font-size: .85rem; resize: vertical; transition: border-color var(--transition);"
+            onkeydown="this.style.borderColor='var(--accent)'" 
+            onblur="this.style.borderColor='var(--border)'"></textarea>
+
+        <button onclick="analyzeMonorepoStructure()" style="width: 100%; padding: 12px 16px; background: var(--accent); color: #000; border: none; border-radius: var(--radius); cursor: pointer; font-family: var(--font-display); font-size: .95rem; font-weight: 600; margin-top: 12px; transition: all var(--transition);" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            Analyze Monorepo
         </button>
-        <label style="padding: 8px 16px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; font-family: var(--font-mono); font-size: .8rem; font-weight: 600; color: var(--text); transition: all var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
-            📤 Upload JSON
-            <input type="file" accept=".json" onchange="handleMonorepoFileUpload(event)" style="display: none;">
-        </label>
-    </div>
 
-    <textarea id="monorepoJsonInput" 
-        placeholder="Paste your package.json or monorepo workspace configuration here..."
-        style="width: 100%; height: 180px; padding: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-family: var(--font-mono); font-size: .85rem; resize: vertical; transition: border-color var(--transition);"
-        onkeydown="this.style.borderColor='var(--accent)'" 
-        onblur="this.style.borderColor='var(--border)'"></textarea>
+        <!-- Error Display -->
+        <div id="monorepoErrorContainer" style="display: none; margin-top: 16px; padding: 12px 16px; background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3); border-radius: var(--radius); color: #fca5a5; font-size: .9rem;">
+            <span id="monorepoErrorText"></span>
+        </div>
 
-    <button onclick="analyzeMonorepoStructure()" style="width: 100%; padding: 12px 16px; background: var(--accent); color: #000; border: none; border-radius: var(--radius); cursor: pointer; font-family: var(--font-display); font-size: .95rem; font-weight: 600; margin-top: 12px; transition: all var(--transition);" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-        Analyze Monorepo
-    </button>
-
-    <!-- Error Display -->
-    <div id="monorepoErrorContainer" style="display: none; margin-top: 16px; padding: 12px 16px; background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3); border-radius: var(--radius); color: #fca5a5; font-size: .9rem;">
-        <span id="monorepoErrorText"></span>
-    </div>
-
-    <!-- Results Display -->
-    <div id="monorepoResultsContainer" style="display: none; margin-top: 20px; display: flex; flex-direction: column; gap: 14px;">
-        
-        <!-- Overview -->
-        <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px;">
-            <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">✅ Monorepo Detected</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: .9rem;">
-                <div>
-                    <p style="color: var(--muted); margin-bottom: 4px;">Total Packages</p>
-                    <p id="monorepoPackageCount" style="color: var(--accent); font-size: 1.4rem; font-weight: 600;">0</p>
+        <!-- Results Display -->
+        <div id="monorepoResultsContainer" style="display: none; margin-top: 20px; display: flex; flex-direction: column; gap: 14px;">
+            
+            <!-- Overview -->
+            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px;">
+                <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">✅ Monorepo Detected</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: .9rem;">
+                    <div>
+                        <p style="color: var(--muted); margin-bottom: 4px;">Total Packages</p>
+                        <p id="monorepoPackageCount" style="color: var(--accent); font-size: 1.4rem; font-weight: 600;">0</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--muted); margin-bottom: 4px;">Issues Found</p>
+                        <p id="monorepoIssueCount" style="color: #fbbf24; font-size: 1.4rem; font-weight: 600;">0</p>
+                    </div>
                 </div>
-                <div>
-                    <p style="color: var(--muted); margin-bottom: 4px;">Issues Found</p>
-                    <p id="monorepoIssueCount" style="color: #fbbf24; font-size: 1.4rem; font-weight: 600;">0</p>
+            </div>
+
+            <!-- Issues -->
+            <div id="monorepoIssuesContainer" style="display: none;">
+                <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">⚠️ Issues Detected</p>
+                <div id="monorepoIssuesList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+            </div>
+
+            <!-- Recommendations -->
+            <div id="monorepoRecsContainer" style="display: none;">
+                <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">💡 Recommendations</p>
+                <div id="monorepoRecsList" style="display: flex; flex-direction: column; gap: 6px;"></div>
+            </div>
+
+            <!-- Packages List -->
+            <div>
+                <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">📦 Packages in Monorepo</p>
+                <div id="monorepoPackagesList" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+        <div style="display: flex; flex-direction: column; gap: 16px; color: var(--muted); font-size: .95rem; font-weight: 300; line-height: 1.75;">
+            
+            <div>
+                <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">What is a Monorepo?</h4>
+                <p>
+                    A monorepo is a single repository containing multiple distinct projects or packages with well-defined relationships between them. Unlike polyrepos (where each project lives in its own repository), monorepos enable code sharing, atomic commits across projects, and unified dependency management. However, they also introduce complexity: tracking interdependencies, preventing circular references, and maintaining version consistency across packages becomes critical.
+                </p>
+            </div>
+
+            <div>
+                <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">When Do You Need a Monorepo Analyzer?</h4>
+                <p>Use a monorepo analyzer when you need to:</p>
+                <ul style="list-style: disc; list-style-position: inside; margin-top: 8px; margin-left: 12px;">
+                    <li><strong style="color: var(--text);">Visualize package relationships:</strong> Understand which packages depend on which others</li>
+                    <li><strong style="color: var(--text);">Detect hidden problems:</strong> Identify circular dependencies, version drift, and orphaned packages before they cause production issues</li>
+                    <li><strong style="color: var(--text);">Audit consistency:</strong> Verify that all packages using the same library have compatible versions</li>
+                    <li><strong style="color: var(--text);">Scale safely:</strong> Ensure your monorepo remains maintainable as you add more packages</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">What to Look for in a Monorepo Analyzer</h4>
+                <p>A good analyzer should:</p>
+                <ul style="list-style: disc; list-style-position: inside; margin-top: 8px; margin-left: 12px;">
+                    <li><strong style="color: var(--text);">Visual dependency graph:</strong> Show how packages connect and depend on each other</li>
+                    <li><strong style="color: var(--text);">Circular dependency detection:</strong> Flag when A depends on B and B depends on A (causes build failures)</li>
+                    <li><strong style="color: var(--text);">Version drift detection:</strong> Alert when two packages use different versions of the same dependency</li>
+                    <li><strong style="color: var(--text);">Orphaned package detection:</strong> Find packages that aren't referenced by any other workspace</li>
+                    <li><strong style="color: var(--text);">Actionable recommendations:</strong> Provide concrete steps to fix identified issues</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 style="color: var(--accent); font-size: .95rem; font-weight: 600; margin-bottom: 8px;">Real-World Use Cases</h4>
+                <div style="margin-left: 12px; display: flex; flex-direction: column; gap: 8px;">
+                    <div><strong style="color: var(--text);">Turborepo / Nx Monorepos:</strong> Analyze workspace structure to enforce module boundaries and task dependencies</div>
+                    <div><strong style="color: var(--text);">React Monorepos:</strong> Detect when UI components and main app use different React versions, causing runtime errors</div>
+                    <div><strong style="color: var(--text);">Microservices Shared Libraries:</strong> Ensure all services consuming a shared library use the same version to prevent subtle bugs</div>
+                    <div><strong style="color: var(--text);">Large Organizations:</strong> Audit hundreds of packages to identify coupling, enforce conventions, and plan migrations</div>
                 </div>
             </div>
         </div>
-
-        <!-- Issues -->
-        <div id="monorepoIssuesContainer" style="display: none;">
-            <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">⚠️ Issues Detected</p>
-            <div id="monorepoIssuesList" style="display: flex; flex-direction: column; gap: 8px;"></div>
-        </div>
-
-        <!-- Recommendations -->
-        <div id="monorepoRecsContainer" style="display: none;">
-            <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">💡 Recommendations</p>
-            <div id="monorepoRecsList" style="display: flex; flex-direction: column; gap: 6px;"></div>
-        </div>
-
-        <!-- Packages List -->
-        <div>
-            <p style="color: var(--text); font-weight: 600; margin-bottom: 10px;">📦 Packages in Monorepo</p>
-            <div id="monorepoPackagesList" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
-        </div>
     </div>
-</div>
 
-<!-- Format Help -->
-<div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; font-size: .85rem;">
-    <p style="color: var(--muted); margin-bottom: 8px;">📝 <strong style="color: var(--text);">Input Format:</strong> Upload or paste JSON with workspaces, packageVersions, and dependencies fields</p>
-    <pre style="background: var(--surface-2); padding: 10px 12px; border-radius: 4px; color: var(--accent); font-family: var(--font-mono); font-size: .75rem; overflow-x: auto; margin: 0;">{
-
-
-“workspaces”: [“packages/ui”, “packages/api”],
-“packageVersions”: { “packages/ui”: { “react”: “18.2.0” } },
-“dependencies”: { “packages/ui”: [“packages/shared”] }
+    <!-- Format Help -->
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; font-size: .85rem;">
+        <p style="color: var(--muted); margin-bottom: 8px;">📝 <strong style="color: var(--text);">Input Format:</strong> Upload or paste JSON with workspaces, packageVersions, and dependencies fields</p>
+        <pre style="background: var(--surface-2); padding: 10px 12px; border-radius: 4px; color: var(--accent); font-family: var(--font-mono); font-size: .75rem; overflow-x: auto; margin: 0;">{
+  "workspaces": ["packages/ui", "packages/api"],
+  "packageVersions": { "packages/ui": { "react": "18.2.0" } },
+  "dependencies": { "packages/ui": ["packages/shared"] }
 }</pre>
-</div>
-
+    </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -732,6 +730,8 @@ function displayMonorepoResults(analysis) {
 }
 </script>
 
+
+
 <section>
     <div class="section-head">
         <h2>Dependency Graph &amp; Structure</h2>
@@ -739,28 +739,24 @@ function displayMonorepoResults(analysis) {
     </div>
     <div class="tools-grid">
 
+        <a class="tool" href="dep-graph/">
+            <span class="tool-path">dep-graph/</span>
+            <span class="tool-name">Dependency Graph Visualizer</span>
+            <span class="tool-desc">Visualize package dependency graphs and relationships across your project. Detect circular dependencies, deep dependency chains, and transitive dependencies.</span>
+            <span class="tool-cta">Open Dep Graph</span>
+        </a>
 
-    <a class="tool" href="dep-graph/">
-        <span class="tool-path">dep-graph/</span>
-        <span class="tool-name">Dependency Graph Visualizer</span>
-        <span class="tool-desc">Visualize package dependency graphs and relationships across your project. Detect circular dependencies, deep dependency chains, and transitive dependencies.</span>
-        <span class="tool-cta">Open Dep Graph</span>
-    </a>
+        <a class="tool" href="monorepo/">
+            <span class="tool-path">monorepo/</span>
+            <span class="tool-name">Monorepo Analyzer</span>
+            <span class="tool-desc">Analyze monorepo structures and inter-package relationships. Understand which packages depend on which, identify shared dependencies, and surface coupling issues.</span>
+            <span class="tool-cta">Open Monorepo Analyzer</span>
+        </a>
 
-    <a class="tool" href="monorepo/">
-        <span class="tool-path">monorepo/</span>
-        <span class="tool-name">Monorepo Analyzer</span>
-        <span class="tool-desc">Analyze monorepo structures and inter-package relationships. Understand which packages depend on which, identify shared dependencies, and surface coupling issues.</span>
-        <span class="tool-cta">Open Monorepo Analyzer</span>
-    </a>
-
-</div>
-
-
+    </div>
 </section>
 
 <!-- VERSION MANAGEMENT -->
-
 <section>
     <div class="section-head">
         <h2>Version Management &amp; Conflicts</h2>
@@ -768,28 +764,24 @@ function displayMonorepoResults(analysis) {
     </div>
     <div class="tools-grid">
 
+        <a class="tool" href="version-conflict/">
+            <span class="tool-path">version-conflict/</span>
+            <span class="tool-name">Version Conflict Checker</span>
+            <span class="tool-desc">Detect version conflicts between dependencies in your package.json or lock file. Find incompatible peer dependencies and duplicate packages at different versions.</span>
+            <span class="tool-cta">Open Conflict Checker</span>
+        </a>
 
-    <a class="tool" href="version-conflict/">
-        <span class="tool-path">version-conflict/</span>
-        <span class="tool-name">Version Conflict Checker</span>
-        <span class="tool-desc">Detect version conflicts between dependencies in your package.json or lock file. Find incompatible peer dependencies and duplicate packages at different versions.</span>
-        <span class="tool-cta">Open Conflict Checker</span>
-    </a>
+        <a class="tool" href="version-drift/">
+            <span class="tool-path">version-drift/</span>
+            <span class="tool-name">Version Drift Analyzer</span>
+            <span class="tool-desc">Analyze version drift across services, packages, and microservices in a monorepo. Identify packages pinned to outdated versions and standardize your dependency baseline.</span>
+            <span class="tool-cta">Open Drift Analyzer</span>
+        </a>
 
-    <a class="tool" href="version-drift/">
-        <span class="tool-path">version-drift/</span>
-        <span class="tool-name">Version Drift Analyzer</span>
-        <span class="tool-desc">Analyze version drift across services, packages, and microservices in a monorepo. Identify packages pinned to outdated versions and standardize your dependency baseline.</span>
-        <span class="tool-cta">Open Drift Analyzer</span>
-    </a>
-
-</div>
-
-
+    </div>
 </section>
 
 <!-- UPDATES & INSIGHTS -->
-
 <section>
     <div class="section-head">
         <h2>Updates &amp; Repository Insights</h2>
@@ -797,28 +789,24 @@ function displayMonorepoResults(analysis) {
     </div>
     <div class="tools-grid">
 
+        <a class="tool" href="update-sim/">
+            <span class="tool-path">update-sim/</span>
+            <span class="tool-name">Dependency Update Simulator</span>
+            <span class="tool-desc">Simulate dependency updates and evaluate potential breaking changes before running npm update or yarn upgrade. Assess risk by semver level (patch/minor/major).</span>
+            <span class="tool-cta">Open Update Simulator</span>
+        </a>
 
-    <a class="tool" href="update-sim/">
-        <span class="tool-path">update-sim/</span>
-        <span class="tool-name">Dependency Update Simulator</span>
-        <span class="tool-desc">Simulate dependency updates and evaluate potential breaking changes before running npm update or yarn upgrade. Assess risk by semver level (patch/minor/major).</span>
-        <span class="tool-cta">Open Update Simulator</span>
-    </a>
+        <a class="tool" href="repo-size/">
+            <span class="tool-path">repo-size/</span>
+            <span class="tool-name">Repo Size Analyzer</span>
+            <span class="tool-desc">Analyze repository and node_modules size by package. Identify bloated dependencies, calculate install footprint, and find packages with large bundle impact.</span>
+            <span class="tool-cta">Open Size Analyzer</span>
+        </a>
 
-    <a class="tool" href="repo-size/">
-        <span class="tool-path">repo-size/</span>
-        <span class="tool-name">Repo Size Analyzer</span>
-        <span class="tool-desc">Analyze repository and node_modules size by package. Identify bloated dependencies, calculate install footprint, and find packages with large bundle impact.</span>
-        <span class="tool-cta">Open Size Analyzer</span>
-    </a>
-
-</div>
-
-
+    </div>
 </section>
 
 <!-- USE CASES -->
-
 <section>
     <div class="section-head">
         <h2>Use Cases</h2>
@@ -837,7 +825,6 @@ function displayMonorepoResults(analysis) {
 </section>
 
 <!-- FAQ -->
-
 <section>
     <div class="section-head">
         <h2>Frequently Asked Questions</h2>
@@ -845,35 +832,32 @@ function displayMonorepoResults(analysis) {
     </div>
     <div class="faq-list">
 
+        <div class="faq-item">
+            <p class="faq-q">What is a dependency graph and how do I visualize it?</p>
+            <p class="faq-a">A dependency graph maps all the packages your project depends on — including transitive dependencies pulled in by your direct dependencies. To visualize it, you can run <code>npm ls --all</code> or use tools like our Dependency Graph Visualizer. Circular dependencies (A depends on B which depends on A) are the most common source of build errors in complex projects.</p>
+        </div>
 
-    <div class="faq-item">
-        <p class="faq-q">What is a dependency graph and how do I visualize it?</p>
-        <p class="faq-a">A dependency graph maps all the packages your project depends on — including transitive dependencies pulled in by your direct dependencies. To visualize it, you can run <code>npm ls --all</code> or use tools like our Dependency Graph Visualizer. Circular dependencies (A depends on B which depends on A) are the most common source of build errors in complex projects.</p>
+        <div class="faq-item">
+            <p class="faq-q">How do I detect version conflicts in my npm dependencies?</p>
+            <p class="faq-a">Version conflicts in npm occur when two packages require incompatible versions of a shared dependency. Run <code>npm ls &lt;package-name&gt;</code> to see all resolved versions of a specific package. Our Version Conflict Checker parses your <code>package.json</code> and <code>package-lock.json</code> to identify conflicts, duplicate installs, and incompatible peer dependencies before they cause runtime errors.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">What is version drift in a monorepo?</p>
+            <p class="faq-a">Version drift happens when different packages in a monorepo use different versions of the same dependency — for example, one service using React 17 while another uses React 18. This creates inconsistency, makes shared components harder to maintain, and can cause subtle runtime bugs. Tools like Nx and Turborepo provide <code>enforce-module-boundaries</code> rules to prevent drift, and our Version Drift Analyzer helps you surface it across all packages at once.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">How do I safely simulate a major npm dependency update?</p>
+            <p class="faq-a">Before running a major upgrade (e.g. webpack 4 to 5, or React 17 to 18), you should check for breaking changes in the changelog, identify which of your packages have peer dependency constraints on the old version, and run the update in a branch with a full test suite. Our Update Simulator helps you assess risk by evaluating semver compatibility and identifying the chain of packages that would be affected by a given version bump.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">What causes node_modules to become so large?</p>
+            <p class="faq-a">The main contributors to node_modules size are: transitive dependencies (your dependencies' dependencies), duplicate packages installed at multiple versions, packages with large compiled binaries (like <code>puppeteer</code> or <code>sharp</code>), and development dependencies included in production installs. Use <code>npm install --production</code> to exclude devDependencies in production, and our Repo Size Analyzer to find the heaviest packages in your install footprint.</p>
+        </div>
+
     </div>
-
-    <div class="faq-item">
-        <p class="faq-q">How do I detect version conflicts in my npm dependencies?</p>
-        <p class="faq-a">Version conflicts in npm occur when two packages require incompatible versions of a shared dependency. Run <code>npm ls &lt;package-name&gt;</code> to see all resolved versions of a specific package. Our Version Conflict Checker parses your <code>package.json</code> and <code>package-lock.json</code> to identify conflicts, duplicate installs, and incompatible peer dependencies before they cause runtime errors.</p>
-    </div>
-
-    <div class="faq-item">
-        <p class="faq-q">What is version drift in a monorepo?</p>
-        <p class="faq-a">Version drift happens when different packages in a monorepo use different versions of the same dependency — for example, one service using React 17 while another uses React 18. This creates inconsistency, makes shared components harder to maintain, and can cause subtle runtime bugs. Tools like Nx and Turborepo provide <code>enforce-module-boundaries</code> rules to prevent drift, and our Version Drift Analyzer helps you surface it across all packages at once.</p>
-    </div>
-
-    <div class="faq-item">
-        <p class="faq-q">How do I safely simulate a major npm dependency update?</p>
-        <p class="faq-a">Before running a major upgrade (e.g. webpack 4 to 5, or React 17 to 18), you should check for breaking changes in the changelog, identify which of your packages have peer dependency constraints on the old version, and run the update in a branch with a full test suite. Our Update Simulator helps you assess risk by evaluating semver compatibility and identifying the chain of packages that would be affected by a given version bump.</p>
-    </div>
-
-    <div class="faq-item">
-        <p class="faq-q">What causes node_modules to become so large?</p>
-        <p class="faq-a">The main contributors to node_modules size are: transitive dependencies (your dependencies' dependencies), duplicate packages installed at multiple versions, packages with large compiled binaries (like <code>puppeteer</code> or <code>sharp</code>), and development dependencies included in production installs. Use <code>npm install --production</code> to exclude devDependencies in production, and our Repo Size Analyzer to find the heaviest packages in your install footprint.</p>
-    </div>
-
-</div>
-
-
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
@@ -906,7 +890,6 @@ function displayMonorepoResults(analysis) {
 </section>
 
 <!-- FOOTER -->
-
 <footer>
     <div class="footer-inner">
         <span class="footer-brand">Repo Dependency Tools</span>
